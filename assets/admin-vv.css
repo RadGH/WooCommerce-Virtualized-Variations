@@ -1,0 +1,15 @@
+.woocommerce_order_items_wrapper table.woocommerce_order_items .wcvv-view table.display_meta tr th {
+	width: 40%;
+}
+
+.woocommerce_order_items_wrapper table.woocommerce_order_items tbody#order_line_items tr.vv-sep td {
+	padding: 0;
+}
+
+.woocommerce_order_items_wrapper table.woocommerce_order_items tbody#order_line_items tr.vv-sep td:after {
+	content: '';
+	display: block;
+	padding-top: 5px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
