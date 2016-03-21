@@ -155,7 +155,9 @@ function wcvv_init_builder_logic() {
 	};
 
 	var builder_format_price = function( value ) {
-		return Math.ceil( parseFloat(value) * 100 ) / 100;
+		value = Math.ceil( parseFloat(value) * 100 ) / 100;
+		if ( value % 1 > 0 ) value = value.toFixed(2);
+		return value;
 	};
 
 	var update_builder_final_field = function() {
