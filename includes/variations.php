@@ -51,6 +51,7 @@ function wcvv_get_variable_max_price( $post_id ) {
 }
 
 function wcvv_format_price( $v ) {
+	$v = floatval($v);
 	$v = number_format( $v, 2 ); //ceil( $v * 100 ) / 100;
 	$v = wc_trim_zeros( $v );
 	return $v;
