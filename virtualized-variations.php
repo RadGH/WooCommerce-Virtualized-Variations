@@ -53,7 +53,6 @@ function wcvv_init_plugin() {
 
 	include( WCVV_PATH . '/includes/options.php' );
 	include( WCVV_PATH . '/includes/enqueue.php' );
-	include( WCVV_PATH . '/includes/save-variations.php' );
 	include( WCVV_PATH . '/includes/variations.php' );
 	include( WCVV_PATH . '/includes/variations-cart.php' );
 
