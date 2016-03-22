@@ -153,10 +153,17 @@ add_filter( 'woocommerce_get_price', 'wcvv_minimum_finished_price', 10, 2 );
 
 
 function wcvv_update_cached_variable_price( $post_id ) {
+	delete_post_meta( $post_id, 'wcvv-price-min' );
+	delete_post_meta( $post_id, 'wcvv-price-max' );
+
+	if ( !wcvv_is_variable( $post_id ) ) return;
+
 	$steps = wcvv_get_product_steps( $post_id );
 	$step_min_prices = array();
 	$step_max_prices = array();
 	$steps_skip = array();
+
+	if ( !$steps ) return;
 
 	foreach( $steps as $step ) {
 		if ( in_array( wcvv_get_step_id($step['variation_title']), $steps_skip, true ) ) continue;
