@@ -89,6 +89,21 @@ function wcvv_get_added_price( $post_id ) {
 	return array( floatval($min), floatval($max) );
 }
 
+function wcvv_make_no_price_variables_purchasable( $purchasable, $product ) {
+	if ( !$purchasable && wcvv_is_variable($product->id) ) {
+		// This can happen if the price for a product is empty.
+		// But we add the variations to the price, so it may not be a problem.
+		if ( $product->get_price() === '' ) {
+			$added_price = wcvv_get_added_price( $product->id );
+			if ( $added_price[0] > 0 ) {
+				return true;
+			}
+		}
+	}
+
+	return $purchasable;
+}
+add_filter( 'woocommerce_is_purchasable', 'wcvv_make_no_price_variables_purchasable', 10, 2 );
 // Indicate customizable products cost more than original price
 /*
 function wcvv_customizable_product_price_indicator( $price, $product, $sale_price = true ) {
