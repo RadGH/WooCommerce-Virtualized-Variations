@@ -29,10 +29,10 @@ div.clear {
 .customizer_step_cotainer .customizer_cover {
 	background:rgba(0,0,0,0.0);
 	position:absolute;
-	top:0px;
-	bottom:0px;
-	right:0px;
-	left:0px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
 	z-index:9999;
 	pointer-events: none;
 }
@@ -51,7 +51,7 @@ div.clear {
 }
 
 .customizer_step_cotainer > a {
-	font-family: "Bevan";
+	font-family: 'Bevan', Garamond, Georgia, serif;
 	font-size:18px;
 	color:#32230a;
 	display:inline-block;
@@ -62,7 +62,7 @@ div.clear {
 	display:inline-block;
 	position:relative;
 	color:#56b3a8;
-	font-family: 'Sinkin Sans 300';
+	font-family: 'Sinkin Sans 300', Arial, Helvetica, sans-serif;
 	width:400px;
 	max-width:50%;
 }
@@ -73,7 +73,7 @@ div.clear {
 
 .show_picture_choices {
 	text-align:left;
-	height:0px;
+	height: 0;
 	transition:all 0.5s;
 	overflow:hidden;
 }
@@ -122,7 +122,7 @@ div.clear {
 .customizer_container .kiva_total_display {
 	text-align:center;
 	color:#ad5800;
-	font-family: "Bevan";
+	font-family: 'Bevan', Garamond, Georgia, serif;
 	font-size:18px;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -137,7 +137,7 @@ div.clear {
 
 /* Step Layout - General */
 h3.step-title {
-	font-family: "Bevan";
+	font-family: 'Bevan', Garamond, Georgia, serif;
 	font-size: 18px;
 }
 
@@ -295,11 +295,11 @@ h3.step-title {
 	width: 36px;
 	height: 36px;
 
-	background: url(zoom.png) 0px 0px no-repeat;
+	background: url(zoom.png) 0 0 no-repeat;
 }
 
 .option-zoom:hover .icon-zoom {
-	background-position: 0px -36px;
+	background-position: 0 -36px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
