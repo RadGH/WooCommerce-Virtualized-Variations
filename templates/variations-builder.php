@@ -74,7 +74,9 @@ $steps = wcvv_get_product_steps();
 
 							if ( $has_images ) {
 								// Find the best size image src to use
-								if ( !empty($image['sizes']['icon']) ) $image_src = $image['sizes']['icon'];
+								// NOTE: Remove the "FALSE &&" to use small, cropped photos
+								if ( FALSE && !empty($image['sizes']['icon']) ) $image_src = $image['sizes']['icon'];
+								else if ( !empty($image['sizes']['shop_thumbnail']) ) $image_src = $image['sizes']['shop_thumbnail'];
 								else if ( !empty($image['sizes']['thumbnail']) ) $image_src = $image['sizes']['thumbnail'];
 								else if ( !empty($image['url']) ) $image_src = $image['url'];
 								else {
@@ -97,7 +99,7 @@ $steps = wcvv_get_product_steps();
 										<a href="<?php echo esc_attr($image['url']); ?>" class="option-zoom" data-rel="prettyPhoto[kiva-step-<?php echo $step_number; ?>]" title="<?php echo esc_attr($name); ?>" ><span class="icon icon-zoom"><span>Zoom</span></span></a>
 										<?php } ?>
 
-										<img src="<?php echo esc_attr($image_src); ?>" alt="<?php echo esc_attr(empty($image['alt']) ? '' : $image['alt']); ?>" title="<?php echo esc_attr(empty($image['alt']) ? '' : $image['alt']); ?>" width="90" height="90">
+										<img src="<?php echo esc_attr($image_src); ?>" alt="<?php echo esc_attr(empty($image['alt']) ? '' : $image['alt']); ?>" title="<?php echo esc_attr(empty($image['alt']) ? '' : $image['alt']); ?>">
 									</div>
 									<?php } ?>
 

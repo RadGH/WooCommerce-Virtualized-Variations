@@ -53,9 +53,9 @@ function wcvv_get_submitted_product( $valid, $product_id, $quantity ) {
 
 	// Get the base price, without any options
 	$product = new WC_Product($product_id);
-	remove_filter( 'woocommerce_get_price', 'wcvv_minimum_finished_price', 10 );
+	//remove_filter( 'woocommerce_get_price', 'wcvv_minimum_finished_price', 10 );
 	$base_price = floatval( $product->get_price() );
-	add_filter( 'woocommerce_get_price', 'wcvv_minimum_finished_price', 10, 2 );
+	//add_filter( 'woocommerce_get_price', 'wcvv_minimum_finished_price', 10, 2 );
 
 	// Calculate a new total price
 	$total_price = wcvv_calculate_price( $base_price, $features );

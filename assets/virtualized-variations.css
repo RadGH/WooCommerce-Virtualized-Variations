@@ -212,7 +212,7 @@ h3.step-title {
 }
 
 .step-option {
-	width: 100px;
+	width: 125px;
 	margin: 0 5px 10px;
 	float: left;
 	position: relative;
@@ -288,6 +288,9 @@ h3.step-title {
 
 /* Magnifying Glass image credit to Austin Condiff from Noun Project */
 .option-zoom .icon-zoom {
+	position: relative;
+	overflow: hidden;
+
 	display: block;
 	width: 36px;
 	height: 36px;
@@ -373,7 +376,7 @@ h3.step-title {
 		color: #fff;
 
 		background: #56B3A8;
-		border: 1px solid #D3CED2;
+		border: 1px solid #45988E;
 		border-right: 0;
 
 		transition: padding 0.6s;
@@ -395,9 +398,15 @@ h3.step-title {
 	}
 }
 
-@media ( min-width: 1300px ) {
+@media ( min-width: 1400px ) {
 	body.scrolled-past-header #builder-final .builder-final-inner {
 		margin-right: -640px;
+	}
+}
+
+@media ( min-width: 1650px ) {
+	body.scrolled-past-header #builder-final .builder-final-inner {
+		margin-right: -720px;
 	}
 }
 
@@ -501,7 +510,7 @@ h3.step-title {
 	.builder-step#builder-final {
 		background: #56B3A8;
 		color: #fff;
-		margin: -31px -20px 0;
+		margin: -31px -10px 0;
 		padding: 30px 20px 30px;
 	}
 
@@ -528,5 +537,97 @@ h3.step-title {
 		content: '';
 		display: block;
 		clear: left;
+	}
+}
+
+/* Bigger variation thumbnails */
+.option-image img {
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 180px;
+}
+
+@media ( max-width: 201px ) {
+	.step-option {
+		width: 100%;
+	}
+}
+
+@media ( max-width: 350px ) and ( min-width: 201px ) {
+	.step-option {
+		width: 47%;
+		width: calc(50% - 10px);
+	}
+}
+
+@media ( max-width: 550px ) and ( min-width: 351px ) {
+	.step-option {
+		width: 31%;
+		width: calc(33% - 10px);
+	}
+}
+
+@media ( max-width: 650px ) and ( min-width: 551px ) {
+	.step-option {
+		width: 23%;
+		width: calc(25% - 10px);
+	}
+}
+
+@media ( max-width: 760px ) and ( min-width: 651px ) {
+	.step-option {
+		width: 18%;
+		width: calc(20% - 10px);
+	}
+}
+
+@media (max-width: 1080px ) and  ( min-width: 761px ) {
+	.step-option {
+		width: 14%;
+		width: calc(16.6% - 10px);
+	}
+}
+
+@media ( min-width: 1081px ) and ( min-height: 800px ) {
+	.option-image {
+		text-align: center;
+	}
+
+	.option-image img {
+		margin: 0 auto;
+		width: auto;
+	}
+
+	.step-option {
+		width: 17%;
+		width: calc(20% - 10px);
+	}
+
+	/* Flexbox precise alignment and consistent spacing */
+	html.flexbox .step-option-container {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
+	html.flexbox .step-option {
+		width: 20%;
+		padding: 0 10px;
+		margin: 0 0 10px;
+		align-content: stretch;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
+	html.flexbox .step-option-inner {
+		width: 100%;
+	}
+
+	html.flexbox .option-image {
+		display: flex;
+		align-items: flex-start;
 	}
 }
