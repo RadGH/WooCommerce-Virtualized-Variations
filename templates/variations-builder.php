@@ -96,7 +96,7 @@ $steps = wcvv_get_product_steps();
 									<?php if ( $has_images ) { ?>
 									<div class="option-image">
 										<?php if ( $image['url'] !== $image_src ) { ?>
-										<a href="<?php echo esc_attr($image['url']); ?>" class="option-zoom" data-rel="prettyPhoto[kiva-step-<?php echo $step_number; ?>]" title="<?php echo esc_attr($name); ?>" ><span class="icon icon-zoom"><span>Zoom</span></span></a>
+										<a href="<?php echo esc_attr($image['url']); ?>#<?php echo (int) $y; ?>" class="option-zoom" data-rel="prettyPhoto[kiva-step-<?php echo $step_number; ?>]" title="<?php echo esc_attr($name); ?>" ><span class="icon icon-zoom"><span>Zoom</span></span></a>
 										<?php } ?>
 
 										<img src="<?php echo esc_attr($image_src); ?>" alt="<?php echo esc_attr(empty($image['alt']) ? '' : $image['alt']); ?>" title="<?php echo esc_attr(empty($image['alt']) ? '' : $image['alt']); ?>">
