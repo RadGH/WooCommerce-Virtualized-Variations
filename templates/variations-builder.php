@@ -147,11 +147,11 @@ $steps = wcvv_get_product_steps();
 				<div class="builder-add-to-cart-submit" style="display: none;">
 					<div class="builder-qty">
 						<label class="qty"><strong>Quantity:</strong>
-					<?php woocommerce_quantity_input( array(
-					'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
-					'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product ),
-					'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
-					) ); ?>
+							<?php woocommerce_quantity_input( array(
+							'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
+							'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product ),
+							'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
+							) ); ?>
 						</label>
 					</div>
 
